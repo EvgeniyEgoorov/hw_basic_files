@@ -8,7 +8,7 @@ with open('recipes.txt', mode='r',  encoding='utf-8-sig') as file:
         ingredients = []
         for els in range(ingredients_qty):
             name, qty, measure = file.readline().split('|')
-            ingredient = {'name': name.strip(), 'qty': qty.strip(), 'measure': measure.strip()}
+            ingredient = {'name': name.strip(), 'qty': int(qty), 'measure': measure.strip()}
             ingredients.append(ingredient)
         cook_book[dish_name] = ingredients
         file.readline()
