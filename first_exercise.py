@@ -1,6 +1,10 @@
+import os
 from pprint import pprint
 
-with open('recipes.txt', mode='r',  encoding='utf-8-sig') as file:
+path = os.path.join(os.getcwd(), 'recipes.txt')
+
+
+with open(path, mode='r',  encoding='utf-8-sig') as file:
     cook_book = {}
     for dish in file:
         dish_name = dish.strip()
@@ -13,6 +17,4 @@ with open('recipes.txt', mode='r',  encoding='utf-8-sig') as file:
         cook_book[dish_name] = ingredients
         file.readline()
     pprint(cook_book, sort_dicts=False)
-
-
 
